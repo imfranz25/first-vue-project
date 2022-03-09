@@ -14,23 +14,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><i class="icofont-carrot icofont-4x" /></td>
-          <td>Carrot</td>
-          <td>$1.00</td>
-          <td>1</td>
-          <td>$1.00</td>
-          <td><button class="btn btn-dark">Add</button></td>
-        </tr>
-        <tr>
-          <td><i class="icofont-banana icofont-4x" /></td>
-          <td>Banana</td>
-          <td>$0.50</td>
-          <td>10</td>
-          <td>$5.00</td>
-          <td><button class="btn btn-dark">Add</button></td>
+        <tr v-for="(quantity, key, i) in orders" :key="i">
+          <td><i class="icofont-4x" :class="'icofont-' + getIcon(key)" /></td>
+          <td>{{ key }}</td>
+          <td>${{ getPrice(key) }}</td>
+          <td>{{ quantity }}</td >
+          <td>${{ (quantity *  3).toFixed(2) }}</td>
+          <!-- <td><button class="btn btn-dark">Add</button></td> -->
         </tr>
       </tbody>
     </table>
   </main>
 </template>
+
+<script>
+export default {
+  props: ['orders', 'getPrice', 'getIcon']
+}
+</script>
