@@ -1,5 +1,7 @@
 # product-and-cart
 
+This mini project/template is made by freeCodeCamp and used for implementing VUE framework for practice. Main feature of this mini project is adding a product in the cart and checkout functionality. Every product that includes in this website is dynamic and fetch/import from json file (assuming that the data comes from database).
+
 ## Project setup
 ```
 npm install
